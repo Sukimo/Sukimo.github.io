@@ -43,6 +43,12 @@ main {
   display: block;
 }
 
+.portrait{
+  display: block;
+  margin: auto;
+  max-width: 20rem;
+}
+
 footer {
   text-align: center;
   padding: 1rem;
