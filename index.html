@@ -9,7 +9,8 @@
 <body>
   <header>
     <h1>My Game Dev Portfolio</h1>
-    <nav>
+    <div class="hamburger" id="hamburger">&#9776;</div>
+    <nav id="navMenu">
       <button onclick="toggleSection('about')">About</button>
       <button onclick="toggleSection('projects')">Projects</button>
       <button onclick="toggleSection('contact')">Contact</button>
@@ -19,29 +20,70 @@
   <main>
     <section id="about" class="content-section active">
       <h2>About Me</h2>
-      <img class="portrait" src="March 7th_16.png">
+      <img class="portrait" src="./images/March 7th_16.png">
       <p>
         I'm a junior Unity developer and game programmer with hands-on experience from internship and contract work (2019–2020). Passionate about building interactive and engaging games using C# and Unity.
       </p>
       <h2>Education</h2>
-      <div>
-        <p>
+      <p>
         Bachelor of Science in Animation and Game
         </p>
         <p>
         College of Arts, Media and Technology, Chiang Mai University (2019) 
         </p>
-      </div>
-      
+   
     </section>
 
     <section id="projects" class="content-section">
       <h2>Projects</h2>
-      <ul>
-        <li><strong>Internship Game Project</strong> – Prototyped core game mechanics using Unity and C#.</li>
-        <li><strong>Contract Game (2020)</strong> – Developed UI features and gameplay scripts for a shipped project.</li>
-        <li><strong>Personal Game Jam (Optional)</strong> – Add if you’ve done anything since.</li>
-      </ul>
+      <div class="project-grid">
+         <!-- Project 1 -->
+        <div class="project-card">
+          <img src="./images/March 7th_16.png" alt="Pirate Game Screenshot" class="project-thumb"/>
+          <div class="project-info">
+             <h3>Final Game Project</h3>
+              <p>Prototyped core game mechanics using Unity and C# during a 3-month internship.</p>
+              <p><strong>Tech:</strong> Unity, c#</p>
+          </div>         
+          </div>
+           <!-- Project 2 -->
+          <div class="project-card">
+            <div class="project-info">
+            <h3>Contract Game (2020)</h3>
+            <p>Developed UI features and gameplay scripts for a released mobile game.</p>
+            <p><strong>Tech:</strong> Unity, C#, Firebase</p>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="project-card">
+            <h3>Mini Puzzle Game</h3>
+            <p>Designed a grid-based puzzle game prototype focused on spatial logic.</p>
+            <p><strong>Tech:</strong> Unity, C#</p>
+          </div>
+
+          <!-- Project 4 -->
+          <div class="project-card">
+            <h3>Game Jam: Duck Defense</h3>
+            <p>2D tower defense game built in 48 hours with a small team.</p>
+            <p><strong>Tech:</strong> Unity, Photoshop, Git</p>
+          </div>
+
+          <!-- Project 5 -->
+          <div class="project-card">
+            <h3>UI System Template</h3>
+            <p>Created a modular UI system for menus, inventory, and settings for future use.</p>
+            <p><strong>Tech:</strong> Unity UI Toolkit, ScriptableObjects</p>
+          </div>
+
+          <!-- Project 6 -->
+          <div class="project-card">
+            <h3>Personal Platformer Demo</h3>
+            <p>Physics-based 2D platformer with animations, collectibles, and basic AI enemies.</p>
+            <p><strong>Tech:</strong> Unity, C#, Aseprite</p>
+          </div>
+
+        </div>
     </section>
 
     <section id="contact" class="content-section">
