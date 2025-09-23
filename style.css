@@ -31,7 +31,6 @@ nav{
     display: flex;
     gap: 10px;
 }
-
 nav button {
   background: #61dafb;
   color: white;
@@ -40,9 +39,14 @@ nav button {
   border-radius: 4px;
   cursor: pointer;  
 }
-
 nav button:hover {
   background: #21a1f1;
+}
+nav a{
+  text-decoration: none;
+}
+nav a:visited{
+  color: inherit;
 }
 
 .hamburger{
@@ -53,7 +57,7 @@ nav button:hover {
 }
 
 /*Responsive styles*/
-@media (max-width: 600px){
+@media (max-width: 660px){
   .hamburger{
     display: block;
   }
@@ -108,17 +112,6 @@ p{
   max-width: 20rem;
 }
 
-.badge{
-  display: inline-block;
-  background-color: #444;
-  color: #fff;
-  padding: 3px 8px;
-  border-radius: 4px;
-  font-size: 0.8px;
-  margin-right: 5px;
-  margin-top: 5px;
-}
-
 /*project section style*/
 .project-gird{
   display: grid;
@@ -133,16 +126,18 @@ p{
   border-radius:  10px;
   padding:  15px;
   color: #f0f0f0;
+  text-decoration: none; /*underline*/
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   align-items: flex-start;
   gap:  15px;
+  cursor: pointer;
 }
 .project-card:hover{
   transform: translateY(-4px);
   box-shadow:  0 4px 20px rgba(0,0,0,0.3);
 }
 .project-thumb{
-  width: 25%;
+  width: 300px;
   height: auto;
   border-radius: 6px;
   margin-right: cover;
@@ -186,7 +181,7 @@ p{
 }
 .media-grid{
   display: grid;
-  grid-template-columns: repeat(auto-fill,minmax(240px,1fr));
+  grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
   gap: 15px;
   margin-top: 20px;
 }
