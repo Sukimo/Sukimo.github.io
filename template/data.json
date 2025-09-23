@@ -1,0 +1,30 @@
+[
+    {
+        "slug": "game-project",
+        "name": "Final Game Project",
+        "tags": ["Unity", "C#","3D","Jam"],
+        "github": "https://github.com/Sukimo",
+        "genre":"3D Action Platformer",
+        "descA": "Prototyped a complete gameplay loop during a 3-month internship.",
+        "descB": "Worked with enemy AI, health system, player controls, UI, and level design. Used Unity physics and ScriptableObjects.",
+        "media": [
+            "images/final-project1.png",
+            "images/final-project2.png",
+            "videos/final-project-demo.mp4"
+        ]
+    },
+    {
+        "slug": "duck-defense",
+        "name": "Game Jam: Duck Defense",
+        "tags": ["Unity", "Team", "Tower Defense"],
+        "github": "https://github.com/YourUsername/DuckDefense",
+        "genre": "2D Tower Defense",
+        "descA": "Built in 48 hours during a game jam.",
+        "descB": "Worked on gameplay logic, tower upgrades, duck art, and Git collaboration.",
+        "media": [
+            "images/duck1.png",
+            "images/duck2.png"
+        ]
+
+    }
+]

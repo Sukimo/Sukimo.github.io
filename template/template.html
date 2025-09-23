@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{TITLE}} | Portfolio</title>
+  <!link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>{{TITLE}}</h1>
+    <nav>
+      <a href="index.html">← Back to Portfolio</a>
+    </nav>
+  </header>
+
+  <main class="project-page">
+    <h2>{{TITLE}}</h2>
+    <div class="tags">
+      {{TAGS}}
+    </div>
+    <p><strong>GitHub:</strong> 
+      <a href="{{GITHUB}}" target="_blank">{{GITHUB}}</a>
+    </p>
+    <p class="desc-main"><strong>Overview:</strong> {{DESC_A}}<br>
+    <strong>Genre:</strong> {{GENRE}}</p>
+
+    <p>{{DESC_B}}</p>
+
+    <div class="media-grid">
+      {{MEDIA}}
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Good Duck!</p>
+  </footer>
+</body>
+</html>
