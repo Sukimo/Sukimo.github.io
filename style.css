@@ -4,14 +4,23 @@
   padding: 0;
 }
 
+/* -------------------------
+   Base / Typography
+   ------------------------- */
 body {
   font-family: Arial, sans-serif;
   background: #f9f9f9;
   color: #333;
   line-height: 1.6;
-  /*padding: 20px; */
 }
 
+h1 { font-size: 2rem; }
+h2{ display: block; margin-block-end: 1em; }
+p, li { display: block; margin-block: 1em; }
+
+/* -------------------------
+   Header / Navigation
+   ------------------------- */
 header {
   background: #20232a;
   color: white;
@@ -23,229 +32,113 @@ header {
   position: relative;
 }
 
-header h1{
-  font-size: 1.5rem;
-}
+header h1{ font-size: 1.5rem; }
 
-nav{
-    display: flex;
-    gap: 10px;
-}
+nav{ display: flex; gap: 10px; }
+nav a{ text-decoration: none; color: inherit; }
+
 nav button {
   background: #61dafb;
   color: white;
   border: none;
   padding: 8px 16px;
   border-radius: 4px;
-  cursor: pointer;  
-}
-nav button:hover {
-  background: #21a1f1;
-}
-nav a{
-  text-decoration: none;
-}
-nav a:visited{
-  color: inherit;
-}
-
-.hamburger{
-  display: none;
-  font-size: 28px;
   cursor: pointer;
-  color: white;
 }
+nav button:hover { background: #21a1f1; }
 
-/*Responsive styles*/
+.hamburger{ display: none; font-size: 28px; cursor: pointer; color: white; }
+
 @media (max-width: 660px){
-  .hamburger{
-    display: block;
-  }
-
-  nav{
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    background-color: #444;
-    padding:  10px 0;
-    position: absolute;
-    top:  60px;
-    left: 0;
-    z-index: 10;
-  }
-  nav.show{
-    display: flex;
-  }
-  nav button{
-    width: 100%;
-    text-align: left;
-    padding: 12px 20px;
-  }
+  .hamburger{ display: block; }
+  /* only hide the header nav when the header has a hamburger (index page)
+     so other pages keep their nav/back link visible on small screens */
+  header.has-hamburger nav{ display: none; flex-direction: column; width: 100%; background-color: #444; padding: 10px 0; position: absolute; top: 60px; left: 0; z-index: 10; }
+  header.has-hamburger nav.show{ display: flex; }
+  header.has-hamburger nav button{ width: 100%; text-align: left; padding: 12px 20px; }
 }
 
-main {
-  padding: 20px;
-}
+/* -------------------------
+   Main / Sections
+   ------------------------- */
+main { padding: 20px; }
 
-h2{
-  display: block;
-  margin-block-end: 1em;
-}
+.content-section { display: none; }
+.content-section.active { display: block; }
 
-p{
-  display: block;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-}
+.portrait{ display: block; margin: auto; max-width: 20rem; }
 
-.content-section {
-  display: none;
-}
-
-.content-section.active {
-  display: block;
-}
-
-.portrait{
-  display: block;
-  margin: auto;
-  max-width: 20rem;
-}
-
-/*project section style*/
-.project-gird{
+/* -------------------------
+   Projects (grid + cards)
+   ------------------------- */
+.project-grid{
   display: grid;
-  grid-template-columns: 1fr;
+  /* 4 columns across the layout; will remain 4 columns on smaller screens per request */
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   padding: 20px 0;
 }
 .project-card{
   display: flex;
+  /* stack image above text so cards fit neatly in a grid cell */
+  flex-direction: column;
+  justify-content: flex-start;
   background: #1e1e1e;
   border: 1px solid #333;
-  border-radius:  10px;
-  padding:  15px;
+  border-radius: 10px;
+  padding: 12px;
   color: #f0f0f0;
-  text-decoration: none; /*underline*/
+  text-decoration: none;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  align-items: flex-start;
-  gap:  15px;
+  gap: 12px;
   cursor: pointer;
+  min-height: 220px;
 }
-.project-card:hover{
-  transform: translateY(-4px);
-  box-shadow:  0 4px 20px rgba(0,0,0,0.3);
-}
+.project-card:hover{ transform: translateY(-4px); box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
+
 .project-thumb{
-  width: 300px;
-  height: auto;
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
   border-radius: 6px;
-  margin-right: cover;
-  flex-shrink: 0;
+  margin: 0;
 }
-.porject-info{
-  flex: 1;
-}
-.project-card h3 {
-  margin-top: 0;
-  color: #ffd700;
-  font-size: 1.2em;
-}
-.project-card p {
-  margin: 0.4em 0;
-  font-size: 0.95em;
-  line-height: 1.4;
-}
+.project-info{ flex: 1; padding: 6px 4px; }
+.project-card h3 { margin-top: 0; color: #ffd700; font-size: 1.2em; }
+.project-card p { margin: 0.4em 0; font-size: 0.95em; line-height: 1.4; }
 
-/*project page style*/
-.project-page{
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-}
-.tags{
-  margin: 10px 0;
-}
-.tag{
-  display: inline-block;
-  background-color: #444;
-  color: #fff;
-  padding: 4px 10px;
-  margin-right: 8px;
-  border-radius: 5px;
-  font-size: 0.85em;
-}
-.desc-main{
-  margin-top: 15px;
-  font-size: 1.05em;
-}
-.media-grid{
-  display: grid;
-  grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
-  gap: 15px;
-  margin-top: 20px;
-}
-.media-grid img, .media-grid video, .media-grid iframe{
-  width: 100%;
-  border-radius: 8px;
-  border: 1px solid #333;
-}
-.responsive-video{
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-  overflow: hidden;
-}
-.responsive-video iframe{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
+/* -------------------------
+   Project detail / media
+   ------------------------- */
+.project-page{ max-width: 800px; margin: 0 auto; padding: 20px; }
+.tags{ margin: 10px 0; }
+.tag{ display: inline-block; background-color: #444; color: #fff; padding: 4px 10px; margin-right: 8px; border-radius: 5px; font-size: 0.85em; }
+.desc-main{ margin-top: 15px; font-size: 1.05em; }
+.media-grid{ display: grid; grid-template-columns: repeat(auto-fill,minmax(300px,1fr)); gap: 15px; margin-top: 20px; }
+.media-grid img, .media-grid video, .media-grid iframe{ width: 100%; border-radius: 8px; border: 1px solid #333; }
+.responsive-video{ position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
+.responsive-video iframe{ position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
-footer {
-  text-align: center;
-  padding: 1rem;
-  background: #eee;
-  margin-top: 2rem;
-}
+footer { text-align: center; padding: 1rem; background: #eee; margin-top: 2rem; }
 
-/* Responsive Styles */
+/* -------------------------
+   Responsive adjustments
+   ------------------------- */
 @media (max-width: 600px) {
-   main {
-    padding: 1rem;
-  }
+  main { padding: 1rem; }
+  h1 { font-size: 1.5rem; }
+  h2 { font-size: 1.25rem; }
+  p, li { font-size: 1rem; line-height: 1.6; }
 
-  h1 {
-    font-size: 1.5rem;
-  }
+  /* keep the project grid at 4 columns per design request; only adjust paddings */
+  .project-card { align-items: center; text-align: center; }
+  .project-info { text-align: left; }
+}
 
-  h2 {
-    font-size: 1.25rem;
-  }
-
-  p, li {
-    font-size: 1rem;
-    line-height: 1.6;   
-  }
-
- .project-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .project-card {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .project-thumb{
-    width: 100%;
-    margin: 0 0 10px 0;
-  }
-
-  .project-info {
-    text-align: left;
-  }
+/* Force single-column projects layout on very small screens */
+@media (max-width: 600px) {
+  .project-grid { grid-template-columns: 1fr; }
+  .project-card { flex-direction: column; align-items: stretch; text-align: left; }
+  .project-thumb { width: 100%; height: 200px; object-fit: cover; margin: 0 0 10px 0; }
+  .project-info { text-align: left; }
 }
