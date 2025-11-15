@@ -67,7 +67,7 @@ main { padding: 20px; }
 .content-section.active { display: block; }
 
 .portrait{ display: block; margin: auto; max-width: 20rem; }
-
+.layout-info{ max-width: 1200px; margin: 0 auto; padding: 20px; }
 /* -------------------------
    Projects (grid + cards)
    ------------------------- */
@@ -98,14 +98,14 @@ main { padding: 20px; }
 
 .project-thumb{
   width: 100%;
-  height: 160px;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
   border-radius: 6px;
   margin: 0;
 }
 .project-info{ flex: 1; padding: 6px 4px; }
 .project-card h3 { margin-top: 0; color: #ffd700; font-size: 1.2em; }
-.project-card p { margin: 0.4em 0; font-size: 0.95em; line-height: 1.4; }
+.project-card p { margin: 0.4em 0 0;}
 
 /* small styling for feature lists used on project pages */
 .features-list {
@@ -150,6 +150,12 @@ footer { text-align: center; padding: 1rem; background: #eee; margin-top: 2rem; 
 @media (max-width: 600px) {
   .project-grid { grid-template-columns: 1fr; }
   .project-card { flex-direction: column; align-items: stretch; text-align: left; }
-  .project-thumb { width: 100%; height: 200px; object-fit: cover; margin: 0 0 10px 0; }
+  .project-thumb { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; margin: 0 0 10px 0; }
   .project-info { text-align: left; }
+}
+
+/* Two-column layout for medium screens */
+@media (max-width: 840px) and (min-width: 601px) {
+  .project-grid { grid-template-columns: repeat(2, 1fr); }
+  .project-card { min-height: 200px; }
 }
